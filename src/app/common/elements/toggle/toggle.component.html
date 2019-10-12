@@ -1,0 +1,51 @@
+
+        <!--<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>-->
+          <!--<div class="form-group">-->
+            <!--<div class="switch-toggle switch-3 switch-candy">-->
+              <!--<input id="on" name="state-d" type="radio" checked="">-->
+              <!--<label for="on" onclick="">ON</label>-->
+
+
+
+              <!--<input id="off" name="state-d" type="radio">-->
+              <!--<label for="off" onclick="">OFF</label>-->
+
+              <!--<a></a>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</form>-->
+
+<div class="row">
+  <div class="col-25"  [ngStyle]="{'margin-left': w25}">
+    <label [ngStyle]="{'margin-left': marginLeft}">{{txt}}</label>
+  </div>
+  <div class="col-75">
+    <div class="switch-toggle switch-3 switch-candy">
+      <input id="on" name="state-d" type="radio" checked="">
+      <label for="on" onclick="">ON</label>
+
+
+
+      <input id="off" name="state-d" type="radio">
+      <label for="off" onclick="">OFF</label>
+
+      <a></a>
+    </div>
+
+  </div>
+</div>
+        <form [formGroup]="guestForm" novalidate>
+        <div class="switch-toggle switch-3 switch-candy">
+          <ng-container #buttonIcon *ngFor="let option of options" >
+            <input
+              type="radio"
+              formControlName="state"
+              [id]="option"
+              [value]="option" />
+            <label
+              [attr.for]="option">
+              {{option}}
+            </label>
+          </ng-container><a></a>
+        </div>
+        </form>

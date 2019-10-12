@@ -1,0 +1,16 @@
+<div class="row" >
+  <div class="col-25" [class.col-251]="w25" [ngStyle]="{'width': w25,'margin-left':marginLeft, 'margin-top':marginTop  }">
+    <label [ngStyle]="{'margin-left': marginLeft }">{{txt}}</label>
+  </div>
+  <div class="col-75" [class.col-751]="w751" [ngStyle]="{'width': w75 }">
+    <input type="text"   placeholder="Your {{pattern}}{{txt}}"
+    [(ngModel)]="entity[ entityField]"
+          (keyup)="valid(entity[ entityField])" [required]="required" >
+    <div class="isa_error" *ngIf="bForm" >
+      {{  entityField}} {{txtDisplay}} {{required}}
+    </div>
+    <!--<div class="isa_error" *ngIf="bForm">-->
+      <!--{{  entityField}} {{txtDisplay}}-->
+    <!--</div>-->
+  </div>
+</div>

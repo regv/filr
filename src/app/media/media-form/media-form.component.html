@@ -1,0 +1,87 @@
+<form >
+<div>
+<p  *ngIf="!ud" style="font-size: 4vw;font-family: 'Segoe UI'; margin:64px 50px 152px ">Add New Media</p>
+<p  *ngIf="ud" style="font-size: 4vw;font-family: 'Segoe UI'; margin:64px 50px 152px ">Update Media</p>
+  <div><div class="buttonPosition">
+    <span *ngIf="ud"  >
+      <app-button [save]="true"  (btnClick)="onFormUpdate()()" [disabled]="validT.size>0"></app-button>&nbsp;
+    </span> <span *ngIf="!ud" > <app-button [save]="true" (btnClick)="onFormSubmit()" [disabled]="validT.size>0" ></app-button>&nbsp;</span>
+    <span (click)="goBack()"><app-button [cancel]="true" routerLinkActive="active"  ></app-button></span>
+  </div>
+  </div>
+<p-tabView >
+
+  <p-tabPanel header="General">
+  <div class="">
+
+<!--<app-input [txt]="'Title'"  [marginLeft]="'0px'"></app-input>-->
+<!--&lt;!&ndash;<app-input [txt]="'Title'" [w75]="'87%'" [w25]="'12%'" [marginLeft]="'0px'"></app-input>&ndash;&gt;-->
+      <!--<app-input [txt]="'Friendly Name'"  [marginLeft]="'0px'" ></app-input>-->
+      <!--<app-texterea [txt]="'Description'"  [marginLeft]="'0px'" [h]="'94.34px'"></app-texterea>-->
+<app-inputb  [txt]="'Title'"
+             [(entity)]="media"
+             [field]="'title'"
+             [w25]="'176px'"
+             (child)="validEtat($event)" [txtDisplay]="'cant be no valid'" [UD]="ud" [required]="true"
+            ></app-inputb>
+
+<app-inputb  [txt]="'Friendly Name'"
+             [(entity)]="media"
+             [w25]="'176px'"
+             [field]="'friendlyName'"
+             (child)="validEtat($event)" [txtDisplay]="'cant be no valid'" [UD]="ud"  [required]="true"
+></app-inputb>
+
+<app-inputb  [txt]="'Description'"
+             [(entity)]="media"
+             [w25]="'176px'"
+             [field]="'description'"
+             (child)="validEtat($event)" [txtDisplay]="'cant be no valid'" [UD]="ud"
+></app-inputb>
+
+      <div class="home">
+
+        <div class="boxI1">
+          <p  class="logo">File</p>
+          <div class="boxI3">
+            <p class="logoUp">{{fileName2}}</p>
+            <input type="file" id="logo" [ngModel]="media?.fileUrls" (ngModelChange)="media.fileUrls = $event" (change)="onFileChange2($event)" name="fileUrls" class="fileB1" accept=".pdf, .txt" />
+            <label for="logo">Upload</label>
+           <app-toggle-b  [txt]="'Confidential'"
+                          [(entity)]="media"
+                          [field]="'bConfidential'" [marginLeft]="'0px'" ></app-toggle-b>
+            <!--<app-group-b  [txt]="'Confidentiel'" [marginLeft]="'0px'"></app-group-b>-->
+          </div>
+        </div>
+        <div class="boxI2">
+          <p  class="logo">Media Picture</p>
+          <img class="pic2" [src]="imgURL" />
+          <div class="boxI4">
+            <p class="logoUp">{{fileName2}}</p>
+            <input type="file" id="landingPageBG" [ngModel]="media?.pictUrl" (ngModelChange)="media.pictUrl = $event" (change)="onFileChange($event)" name="picUrl" class="IMG" accept=".png, .jpg, .jpeg"/>
+            <label for="landingPageBG">Upload</label>
+          </div>
+        </div>
+
+      </div>
+
+      <!--<div class="row">-->
+        <!--<div class="col-25">-->
+          <!--&lt;!&ndash;<div class="ui-g-6"></div>&ndash;&gt;-->
+          <!--<br><app-group-b   [txt]="'Confidentiel'" [marginLeft]="'0px'"></app-group-b>-->
+
+          <!--<p  class="logoUp">img.jpg</p><p class="pos"><app-button class="UploadPosition" [upload]="true"></app-button></p>-->
+
+        <!--</div>-->
+
+        <!--<div class="col-75"> <img src="https://mdbootstrap.com/img/Photos/Slides/2.jpg" class="img-fluid"><br></div>-->
+      <!--</div>-->
+
+  </div>
+    </p-tabPanel>
+  <p-tabPanel header="Tags">
+    <app-table [colName1]="'All Tags'" [colName2]="'Used Tags'"></app-table>
+  </p-tabPanel>
+</p-tabView>
+</div>
+</form>

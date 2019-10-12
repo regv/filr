@@ -1,0 +1,21 @@
+<!--<div class="container_list" >-->
+<div class="marg">
+  <app-search  [Txt]="'searchText'" (child)="searchText=$event"></app-search>
+</div>
+
+
+<!--<div style="margin-bottom: 37.22px; margin-left: 50px" >-->
+  <!--<p style="font-size:  6vmin ;font-family: 'Segoe UI'">Tags(3)</p><app-button class="po" [add]="true" routerLinkActive="active"  routerLink="add"></app-button>-->
+<!--</div>-->
+<div style="margin-bottom: 37.22px; margin-left: 50px" >
+
+  <p style="font-size: 6vmin ;font-family: 'Segoe UI'">Tags({{tags.length}})</p>
+  <app-button class="po" [add]="true" routerLinkActive="active"  routerLink="add"></app-button>
+</div>
+  <section  *ngFor="let i of tags | filter : searchText ">
+
+    <app-tag-item [data]="i" [id]="i.id" ></app-tag-item>
+    <br>
+    <br>
+  </section>
+<!--</div>-->

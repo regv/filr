@@ -1,0 +1,25 @@
+<!--<div class="container_list" >-->
+<div class="marg">
+  <app-search  [Txt]="'searchText'" (child)="searchText=$event"></app-search>
+</div>
+
+<div style="margin-bottom: 37.22px; margin-left: 50px" >
+
+  <p style="font-size: 6vmin ;font-family: 'Segoe UI'">Configurations({{configurations.length}})</p>
+  <app-button class="po" [add]="true" routerLinkActive="active"  routerLink="add"></app-button>
+</div>
+
+  <section  *ngFor="let i of configurations  | filter : searchText  ">
+
+    <app-configuration-item [data]="i" [id]="i.id" (applyToggle)="ApplyConfiguration(i,i.id);"></app-configuration-item>
+  </section>
+<!--</div>-->
+<!--{{address.street}}-->
+<!--<div *ngFor="let category of categories; let i = index">-->
+  <!--<label>{{category.name}}</label>-->
+  <!--<input type="checkbox" [disabled]="categories[i]." (click)="Selection(category.id);"/>-->
+<!--</div>-->
+<!--<div *ngFor="let category of configurations; let i = index">-->
+  <!--<label>{{category.name}}</label>-->
+  <!--<input type="checkbox" [(ngModel)]="configurations[i].bApplied" (click)="Selection(category.id);"/>-->
+<!--</div>-->

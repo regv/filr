@@ -1,0 +1,25 @@
+<!--<label>-->
+  <!--<textarea #textarea  [(ngModel)]="entity[entityField]"-->
+            <!--[value]="entity[entityField]"-->
+            <!--(keydown.escape)="cancelUpdate()"-->
+            <!--(keyup.enter)="updateEntity()"-->
+            <!--rows="{{rows}}"-->
+            <!--cols="{{cols}}">-->
+  <!--</textarea>-->
+<!--</label>-->
+<div class="row">
+  <div class="col-25" [ngStyle]="{'margin-left': marginLeft , 'width': w25 }" [class.col-252]="w25">
+    <label>{{txt}}</label>
+  </div>
+  <div class="col-75" [ngStyle]="{  'width': w75 }" [class.col-752]="w75">
+
+<textarea #textarea  [(ngModel)]="entity[entityField]"
+          [value]="entity[entityField]"
+          (keydown.escape)="cancelUpdate()"
+          (keyup.enter)="updateEntity()"
+          rows="5" cols="33"
+          (keyup)="valid(entity[ entityField])" [required]="required">
+</textarea>
+
+  </div>
+</div>

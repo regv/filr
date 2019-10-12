@@ -1,0 +1,123 @@
+<!--<div style="clear: both;min-height: 786px;height: 785px;overflow-y:auto;border: #707070 1px solid;"><table id="customers">-->
+  <!--<tr>-->
+    <!--<th>{{colName1}}</th>-->
+
+  <!--</tr>-->
+  <!--<tr>-->
+    <!--<td><label class="containert">{{colName1}}-->
+      <!--<input type="checkbox" checked="checked">-->
+      <!--<span class="checkmark"></span>-->
+    <!--</label></td>-->
+    <!--<td><label class="containert">{{colName2}}-->
+      <!--<input type="checkbox" checked="checked">-->
+      <!--<span class="checkmark"></span>-->
+    <!--</label></td>-->
+
+  <!--</tr>-->
+
+  <!--<tr  *ngFor="let item1 of allMedia">-->
+    <!--&lt;!&ndash;<span *ngFor=" let iti of selectedMedia"></span>&ndash;&gt;-->
+    <!--<td><label class="containert">{{item1.officename}}-->
+    <!--<input  [(ngModel)]="item1.checked" (change)="onChange(item1)" type="checkbox" >-->
+      <!--<span class="checkmark"></span>-->
+    <!--</label></td>-->
+    <!--&lt;!&ndash;<td [hidden]="!bil.checked"><label class="containert">{{bil.officename}}&ndash;&gt;-->
+      <!--&lt;!&ndash;<input type="checkbox" [checked]="item1.checked">&ndash;&gt;-->
+      <!--&lt;!&ndash;<span class="checkmark"></span>&ndash;&gt;-->
+    <!--&lt;!&ndash;</label></td>&ndash;&gt;-->
+
+  <!--</tr>-->
+<!--</table>-->
+  <!--<table id="customers1">-->
+  <!--<tr>-->
+    <!--<th>{{colName2}}</th>-->
+
+  <!--</tr>-->
+
+  <!--<tr  *ngFor="let  item of selectedMedia; let i = index ">-->
+    <!--&lt;!&ndash;<span *ngFor=" let iti of selectedMedia"></span>&ndash;&gt;-->
+    <!--<td><label class="containert">{{item.officename}}-->
+      <!--<input  [checked]="item.checked"  type="checkbox" (change)="changeSelectionUsedM(item, i)">-->
+      <!--<span class="checkmark"></span>-->
+    <!--</label></td>-->
+    <!--&lt;!&ndash;<td [hidden]="!bil.checked"><label class="containert">{{bil.officename}}&ndash;&gt;-->
+      <!--&lt;!&ndash;<input type="checkbox" [checked]="item1.checked">&ndash;&gt;-->
+      <!--&lt;!&ndash;<span class="checkmark"></span>&ndash;&gt;-->
+    <!--&lt;!&ndash;</label></td>&ndash;&gt;-->
+
+  <!--</tr>-->
+<!--</table>-->
+<!--</div>-->
+
+
+
+<!--<app-tabs></app-tabs>-->
+<div class="tab_container">
+  <input class="input" id="tab1" type="radio" name="tabs" >
+  <label class="label" for="tab1"><i class="fa fa"></i><span>Used</span></label>
+
+  <input  class="input" id="tab2" type="radio" name="tabs" checked>
+  <label class="label" for="tab2" class="label"><span>All</span></label >
+
+  <input class="input" id="tab3" type="radio" name="tabs">
+  <label class="label" for="tab3"><span>Unused</span></label>
+
+  <section  id="content1" class="tab-content  section">
+    <table id="customers">
+      <tr>
+        <th>{{colName2}}</th>
+
+      </tr>
+
+      <tr  *ngFor="let  item of selectedMedia ; let i = index">
+        <!--<span *ngFor=" let iti of selectedMedia"></span>-->
+        <td><label class="containert">{{item.officename}}
+          <input  [checked]="item.checked"  type="checkbox" (change)="changeSelectionUsedM(item, i)">
+          <span class="checkmark"></span>
+        </label></td>
+        <!--<td [hidden]="!bil.checked"><label class="containert">{{bil.officename}}-->
+        <!--<input type="checkbox" [checked]="item1.checked">-->
+        <!--<span class="checkmark"></span>-->
+        <!--</label></td>-->
+
+      </tr>
+    </table>
+  </section>
+
+  <section  id="content2" class="tab-content section">
+
+    <table id="customers1">
+      <tr>
+        <th>{{colName1}}</th>
+
+      </tr>
+      <tr  *ngFor="let item1 of allMedia">
+        <!--<span *ngFor=" let iti of selectedMedia"></span>-->
+        <td><label class="containert">{{item1.officename}}
+          <input  [(ngModel)]="item1.checked" (change)="onChange(item1)" type="checkbox" >
+          <span class="checkmark"></span>
+        </label></td>
+
+      </tr>
+    </table>
+  </section>
+
+  <section  id="content3" class="tab-content  section">
+    <table id="customers">
+      <tr>
+        <th>{{colName2}}</th>
+
+      </tr>
+
+      <tr  *ngFor="let  item2 of noSelectedMedia; let i2 = index ">
+        <!--<span *ngFor=" let iti of selectedMedia"></span>-->
+
+        <td><label class="containert">{{item2.officename}}
+          <input  [checked]="item2.checked"  type="checkbox" (change)="changeNoSelectionUsedM(item2, i2)" >
+          <span class="checkmark"></span>
+        </label></td>
+      </tr>
+    </table>
+  </section>
+
+</div>

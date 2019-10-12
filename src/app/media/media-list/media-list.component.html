@@ -1,0 +1,16 @@
+<!--<div class="container_list" >-->
+<div class="marg">
+  <app-search></app-search>
+</div>
+
+<div style="margin-bottom: 37.22px; margin-left: 50px" >
+  <p style="font-size:  6vmin;font-family: 'Segoe UI'">Medias (3)</p><app-button class="po" [add]="true" routerLinkActive="active"  routerLink="add"></app-button>
+</div>
+
+
+
+<section  *ngFor="let i of medias  | filter : searchText  ">
+    <app-media-item [data]="i" [id]="i.id"></app-media-item>
+  <br>
+  </section>
+<!--</div>-->

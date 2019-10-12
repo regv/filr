@@ -1,0 +1,219 @@
+
+<form  >
+<div>
+  <style>@media screen and (max-width: 1313px) {
+    input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }}
+  </style>
+</div>
+  <p  *ngIf="!ud" style="font-size:4vw;font-family: 'Segoe UI'; margin:64px 50px 152px ">Add New Configuration</p>
+  <p  *ngIf="ud"style="font-size:4vw;font-family: 'Segoe UI'; margin:64px 50px 152px ">Update Configuration</p>
+
+<div><div class="buttonPosition">
+  <span *ngIf="ud"   > <app-button [save]="true" (btnClick)="onFormUpdate()" [disabled]="validT.size>0" ></app-button>&nbsp;</span>
+  <span *ngIf="!ud"   > <app-button [save]="true" (btnClick)="onFormSubmit()" [disabled]="validT.size>0" ></app-button>&nbsp;</span>
+  <span (click)="goBack()"><app-button [cancel]="true" routerLinkActive="active"  ></app-button></span>
+
+</div>
+  <p-tabView class="pTable">
+
+  <p-tabPanel header="General">
+  <div class="">
+      <!--<app-input [txt]="'Name'" >-->
+       <!--<div class=".col-75">-->
+        <!--<input type="text" [ngModel]="configuration.name" (ngModelChange)="configuration.name = $event" name="name"/>-->
+  <!--</div>-->
+      <!--</app-input>-->
+    <app-inputb  [txt]="'Name'"
+                 [(entity)]="configuration"
+                 [field]="'name'"  (child)="validEtat($event)" [txtDisplay]="'cant be no valid'" [UD]="ud" [required]="true"></app-inputb>
+    <div class="form-group">
+
+
+    <!--<app-input [txt]="'Device'" >-->
+
+        <!--<div class=".col-75">-->
+          <!--<input type="text" [ngModel]="configuration?.device" (ngModelChange)="configuration.device = $event" name="device"/>-->
+        <!--</div>-->
+      <!--</app-input>-->
+    <app-inputb  [txt]="'Device'"
+                 [(entity)]="configuration"
+                 [field]="'device'"
+                 (child)="validEtat($event)" [txtDisplay]="'cant be no valid'" [UD]="ud" [required]="true"></app-inputb>
+
+      <!--<app-input [txt]="'Message'" >-->
+        <!--<div class=".col-75">-->
+          <!--<input type="text" [ngModel]="configuration?.msgWelcome" (ngModelChange)="configuration.msgWelcome = $event" name="message"/>-->
+        <!--</div>-->
+      <!--</app-input>-->
+      <app-inputb  [txt]="'Message'"
+                   [(entity)]="configuration"
+                   [field]="'msgWelcome'"
+                   (child)="validEtat($event)" [txtDisplay]="'cant be no valid two'" [UD]="ud" [required]="true"
+      ></app-inputb>
+
+      <!--<app-input [txt]="'Email url'" >-->
+        <!--<div class=".col-75">-->
+          <!--<input type="text" [ngModel]="configuration?.emailUrl" (ngModelChange)="configuration.emailUrl = $event" name="email"/>-->
+        <!--</div>-->
+      <!--</app-input>-->
+      <app-inputu  [txt]="'Email url'"
+                   [(entity)]="configuration"
+                   [field]="'emailUrl'"  (child)="validEtat($event)" [txtDisplay]="' is required '"   [UD]="ud" [required]="configuration.bEnableFavs" ></app-inputu>
+      <!--<app-input [txt]="'Stats url'" >-->
+        <!--<div class=".col-75">-->
+          <!--<input type="text" [ngModel]="configuration?.statsUrl" (ngModelChange)="configuration.  statsUrl = $event" name="url"/>-->
+        <!--</div>-->
+      <!--</app-input>-->
+      <app-inputb  [txt]="'Footer'"
+                   [(entity)]="configuration"
+                   [field]="' footerText'"></app-inputb>
+      <!--<app-input (child)="configuration.name=$event" [field]="'configuration.name'" [parentForm]="'configForm'" [txt]="'Name'"></app-input>-->
+      <!--<app-input [txt]="'Message'"></app-input>-->
+      <!--<app-input [txt]="'Device'"></app-input>-->
+      <!--<app-input [txt]="'Email url'"></app-input>-->
+      <!--<app-input [txt]="'Stats url'"></app-input>-->
+      <!--<input type="text"  [(ngModel)]="name"  placeholder="Your {{txt}}" ngModel>-->
+      <!--<div class="ui-g">-->
+        <!--<div class="ui-g-6"><p class="logo">Logo</p></div>-->
+        <!--<div class="ui-g-6"> <p  class="logo">Background</p></div>-->
+      <!--</div>-->
+      <!--<div class="ui-g">-->
+      <!--<div class="ui-g-6"><img [src]="imgURL" width="50%" height="50%" style="min-height:282.9px; min-width: 633px"/><br></div>-->
+      <!--<div class="ui-g-6"> <img src="https://mdbootstrap.com/img/Photos/Slides/2.jpg" width="660.9" height="250" class="img-fluid"/><br></div>-->
+      <!--</div>-->
+      <!--<div class="ui-g">-->
+        <!--<div class="ui-g-6"><p  class="logoUp"><input hidden type="file" (change)="onFileChanged($event)" #fileInput></p><p class="pos"> <button (click)="fileInput.click()">Select File</button></p></div>-->
+        <!--<div class="ui-g-6"><p  class="logoUp">  </p><p class="pos"> <button (click)="fileInput.click()">Select File</button></p></div>-->
+        <!--<div class="ui-g-6"><p  class="logoUp">  </p><p class="pos"></p></div>-->
+        <!--<div class="ui-g-6"><p class="logoUp">img2.jpg</p> <p  class="pos"><app-button  [upload]="true"></app-button></p></div>-->
+      <!--</div>-->
+
+  </div>
+    <div class="home">
+
+      <div class="boxI1">
+        <p  class="logo">Logo</p>
+        <img class="pic" [src]="imgURL" />
+        <div class="boxI3">
+          <p class="logoUp"></p>
+          <input type="file" id="logo"  (change)="onFileChange($event)" name="landingPageBG" class="IMG" />
+          <label for="logo">Upload</label>
+      </div>
+      </div>
+      <!--accuil div-->
+      <div class="boxI1">
+        <p  class="logo">Accueil</p>
+        <img class="pic" [src]="imgURL2" />
+        <div class="boxI3">
+          <p class="logoUp"></p>
+          <input type="file" id="accueil"  (change)="onFileChange2($event)" name="accueil" class="IMG" />
+          <label for="accueil">Upload</label>
+        </div>
+      </div>
+
+      <div class="boxI2">
+        <p  class="logo">Background</p>
+        <img class="pic2" [src]="imgURL3" />
+        <div class="boxI4">
+          <p class="logoUp"></p>
+          <input type="file" id="landingPageBG"  [ngModel]="configuration?.landingPageBG" (ngModelChange)="configuration.landingPageBG = $event" (change)="onFileChange3($event)" name="landingPageBG" class="IMG" />
+        <label for="landingPageBG">Upload</label>
+        </div>
+      </div>
+
+    </div>
+    <!--<div class="upload">-->
+    <!--&lt;!&ndash;<div class="boxI3"></div>&ndash;&gt;-->
+    <!--<div class="boxI4"></div>-->
+</div>
+    </p-tabPanel>
+  <p-tabPanel header="Medias">
+
+<app-table [colName1]="'All medias'" [colName2]="'Used medias'" [medias1]="Tarrah" [confMedia1]="Prime"></app-table>
+    <!--<app-group-b [txt]="'Enable Favs'"></app-group-b>-->
+    <app-toggle-b [txt]="'Enable Favs'"
+                  [(entity)]="configuration"
+                  [field]="'bEnableFavs'" [marginLeft]="'16px'" ></app-toggle-b>
+
+  </p-tabPanel>
+  <p-tabPanel header="Features">
+    <div class="ui-g">
+      <div class="ui-g-4"><h1 class="title"><b>Sessions</b></h1></div>
+<!--upload-->
+
+    <!--<div class="form-group">-->
+        <!--<input type="file" id="landingPageBG" [ngModel]="configuration?.landingPageBG" (ngModelChange)="configuration.landingPageBG = $event" (change)="onFileChange($event)" name="landingPageBG"  />-->
+      <!--</div>-->
+      <!--<img [src]="imgURL" width="350" height="250">-->
+    <!--</div>-->
+
+    <!--<div class="ui-g">-->
+      <!--<div class="ui-g-4">Enable session</div>-->
+      <!--<div class="ui-g-6 f">-->
+      <!--<app-group-b></app-group-b>-->
+      <!--</div>-->
+    </div>
+    <app-toggle-b [txt]="'Enable sessions'"
+                  [(entity)]="configuration"
+                  [field]="'bEnableSession'" [marginLeft]="'30px'"></app-toggle-b>
+
+    <app-toggle-b [txt]="'Allow annymous user'"
+                  [(entity)]="configuration"
+                  [field]="'bAllowAnonUsers'" [marginLeft]="'30px'"></app-toggle-b>
+    <div class="ui-g">
+      <div class="ui-g-4"><h1 class="title"><b>Votes</b></h1></div>
+
+    </div>
+    <app-toggle-b [txt]="'Allow voting'"
+                  [(entity)]="configuration"
+                  [field]="'bAllowVoting'" [marginLeft]="'30px'"></app-toggle-b>
+
+        <!--<textarea  #textarea type="text" [ngModel]="configuration?.voteQuestion" (ngModelChange)="configuration.voteQuestion = $event" name="voteQuestion"></textarea>-->
+
+      <!--</div>-->
+    <!--</app-texterea>-->
+    <app-textereab   [(entity)]="configuration"
+                     [field]="'voteQuestion'"
+                     [txt]="'Question'" [h]="'88.4px'" [marginLeft]="'58px'"  ></app-textereab>
+    <!--<app-texterea [txt]="'Question'" [h]="'88.4px'"  [name]="'voteQuestion'" (nameChange)="'configuration.voteQuestion = $event'" [name1]="'voteQuestion'"  (name1Change)="'voteQuestion = $event.target.value'" ></app-texterea>-->
+   <!--<app-group-b [txt]="'Type'"></app-group-b>-->
+    <app-toggle-b [txt]="'Type'"
+                  [(entity)]="configuration"
+                  [field]="' voteCategor'" [marginLeft]="'30px'" [emoji]="true"></app-toggle-b>
+    <div class="ui-g">
+      <div class="ui-g-4"><h1 class="title"><b>Stats</b></h1></div>
+    </div>
+    <!--<app-group-b [txt]="'Send Stats'" [marginLeft]="'30px'"></app-group-b>-->
+    <app-toggle-b [txt]="'Send Stats'"
+                  [(entity)]="configuration"
+                  [field]="'bStats'" [marginLeft]="'30px'"></app-toggle-b>
+    <!--<div class="ui-g">-->
+      <!--<div class="ui-g-4"><h1><b>Footer</b></h1></div><br>-->
+    <!--</div>-->
+      <!--<app-texterea [txt]="'note'" [h]="'88.4px'"></app-texterea>-->
+<!--<app-input [txt]="'Url stats'" [w25]="true" [marginLeft]="'29px'"></app-input>-->
+
+    <!--<app-textereab   [(entity)]="configuration"-->
+                     <!--[field]="'footerText'"-->
+                     <!--[txt]="'note'" [h]="'88.4px'" [marginLeft]="'50px'"  ></app-textereab>-->
+    <app-inputu  [txt]="'Stats url'"
+                 [(entity)]="configuration"
+                 [field]="'statsUrl'" [marginLeft]="'30px'" [marginTop]="'0'" [w751]="true" (child)="validEtat($event)"   [txtDisplay]="' is required '" [UD]="ud" [required]="configuration.bStats"></app-inputu>
+
+    <!--<app-inputu  [txt]="'Email url'"-->
+                 <!--[(entity)]="configuration"-->
+    <div *ngFor="let i of Tarrah">
+      <!--<div *ngFor="let k of 2">-->
+      <!--<div  *ngFor="let subItem of i['medias']">-->
+        <p>{{i[0].title}}</p>
+      <!--</div>-->
+      </div>
+<!--</div>          &lt;!&ndash;[field]="'Stats url'"  [marginLeft]="'30px'" [marginTop]="'0'" [w751]="true" (child)="validEtat($event)" [txtDisplay]="' is required '"   [UD]="ud" [required]="configuration.statsUrl" ></app-inputu>&ndash;&gt;-->
+  </p-tabPanel>
+</p-tabView>
+</div>
+
+</form>

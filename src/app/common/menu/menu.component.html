@@ -1,0 +1,24 @@
+<!--<div class="side">-->
+  <!--<span style="font-size:42px;cursor:pointer; position: absolute;left: 20%" id="bu"  (click)="onClick($event)">&#9776; </span>-->
+<!--</div>-->
+<!--<div  id="mySidenav" class="sidenav">-->
+  <!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
+  <!--<a href="#">About</a>-->
+  <!--<a href="#">Services</a>-->
+  <!--<a href="#">Clients</a>-->
+  <!--<a href="#">Contact</a>-->
+
+<div class="side">
+  <div class="nx" (click) ="toggle()"><b>NX</b></div>
+  <div class="load"><div class="icons8-reset"></div> </div>
+</div>
+<div  id="mySidenav" class="sidenav" [ngStyle]="{'display' : showFirst ? 'initial' : 'none'}">
+  <div class="nexus">Nexus</div>
+<a routerLinkActive="active"  routerLink="configurations" href="#">Configurations</a>
+<a routerLinkActive="active"  routerLink="tags" href="#">Tags</a>
+<a routerLinkActive="active"  routerLink="medias" href="#">Medias</a>
+<a routerLinkActive="active"  routerLink="users" href="#">Users</a>
+  <a href="#"  routerLinkActive="active"  routerLink="ftps">FTP</a>
+
+
+</div>

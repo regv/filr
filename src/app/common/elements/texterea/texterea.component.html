@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-25" [ngStyle]="{'margin-left': marginLeft , 'width': w25 }" [class.col-252]="w25">
+    <label [ngStyle]="{'margin-left': marginLeft }">{{txt}}</label>
+  </div>
+  <div class="col-75" [ngStyle]="{  'width': w75 }" [class.col-752]="w75">
+    <!--<textarea   #textarea placeholder="Write something.." [(ngModel)]="name" (ngModelChange)="nameChange.emit($event)" ngControl="name1" name="{{name1}}" style="height:200px" [ngStyle]="{'margin-left': marginLeft , 'height':h }"></textarea>-->
+    <!--<textarea-->
+              <!--[(ngModel)]="entity[entityField]"-->
+              <!--[value]="entity[entityField]"-->
+              <!--(keydown.escape)="cancelUpdate()"-->
+              <!--(keyup.enter)="updateEntity()"-->
+              <!--rows="{{rows}}"-->
+              <!--cols="{{cols}}"-->
+              <!--style="height:200px" [ngStyle]="{'margin-left': marginLeft , 'height':h }">-->
+    <!--</textarea>-->
+      <ng-content></ng-content>
+
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<!--<form formGroupName="child">-->
+<div class="row" >
+  <!--[formGroup]="parentForm"-->
+  <div class="col-25" [class.col-251]="w25" [ngStyle]="{'width': w25,'margin-left':marginLeft, 'margin-top':marginTop }">
+    <label [ngStyle]="{'margin-left': marginLeft }">{{txt}}</label>
+  </div>
+  <div [ngStyle]="{'margin-left': marginLeft , 'width': w75 }">
+    <!--<input type="text"  formControlName="txt"   placeholder="Your {{txt}}" ngModel>-->
+    <ng-content></ng-content>
+
+  </div>
+</div>
+<!--</form>-->
+<!--<input type="text"  formControlName="field"  (ngModelChange)="valueChange($event)" [(ngModel)]="field" [formControlName]="txt" placeholder="Your {{txt}}" ngModel>-->

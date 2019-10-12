@@ -1,0 +1,55 @@
+<div class="card ">
+
+  <div id="container">
+    <div id="left">
+      <h2 style="font-family: 'Arial'; font-size:36px"><b>{{data.title}}</b></h2>
+      <p class="friendly">{{data.friendlyName}}</p>
+      <p style="font-size: 20px; margin-top: 27.85px;">{{data.description}}</p>
+    </div>
+    <div id="center">
+      <!--<button type="button" class="btn btn-outline-primary btr">Primary</button>          <button type="button" class="btn btn-outline-primary btr">Primary</button>-->
+      <!--<button type="button" class="btn btn-outline-primary btr">Primary</button>      <button type="button" class="btn btn-outline-primary btr">Primary</button>-->
+
+      <app-tag [color]="'red'"></app-tag>
+      <app-tag [color]="'green'"></app-tag>
+      <app-tag [color]="'black'"></app-tag>
+
+
+
+    </div>
+    <div id="right">
+      <!--<img class="card-img-top" src="http://via.placeholder.com/460x250" alt="">-->
+      <img class="card-img-top" src={{data.pictUrl}} alt="">
+      <br>
+      <br>
+      <div class="button3">
+
+
+        <div class="item2">
+          <div class="config">
+            <!--<label>-->
+              <!--<input type="checkbox">-->
+              <!--<div class='switch'>-->
+                <!--<div class='switch-el'></div>-->
+              <!--</div>-->
+            <!--</label>-->
+            <!--<i class="fa fa-gear " style="font-size:24px"></i>-->
+          </div>
+          <div class="button3">
+            <span [routerLink]="['edit/', id]" ><app-button [edit]="true" routerLinkActive="active" (click)="go(c)"></app-button></span>&nbsp;
+            <app-button [remove]="true" (click)="confirm()"></app-button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div *ngIf="pop">
+  <app-popup (child)="pop=$event" [Id]="id" [component]="'media'" [name]="'delete'"></app-popup>
+
+</div>

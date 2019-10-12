@@ -1,0 +1,55 @@
+<div class="card ">
+<!--information div-->
+  <div class="item1">
+<!--text display div-->
+    <div class="text">
+<h2 style="font-family: 'Arial'; font-size:36px"><b>{{data.name}}</b></h2>
+      <p>message:{{data.msgWelcome}} </p>
+      <p>Device: {{data.device}}</p>
+
+    </div>
+<!--image block display-->
+    <div class="img">
+      <img class="card-img-top" [src]="link" alt="">
+      <img class="card-img-top1"  [src]="link2" alt="">
+      <img class="card-img-top2"  [src]="link3" alt="">
+
+    </div>
+
+  </div>
+
+  <div class="item2">
+<div class="config">
+  <label>
+    <input type="checkbox" [(ngModel)]="data.bApplied" (change)="apply()">
+    <div class='switch'>
+      <div class='switch-el'></div>
+    </div>
+  </label>
+  <!--drouup -->
+  <div class="icons8-settings dropup">
+    <div class="dropup-content">
+      <a (click)="confirm1()">Duplicate</a>
+      <a >Others...</a>
+    </div>
+  </div>
+</div>
+    <div class="button3">
+<span [routerLink]="['edit/', id]" ><app-button [edit]="true" routerLinkActive="active" (click)="go(c)"></app-button></span>&nbsp;
+     <app-button [remove]="true" (click)="confirm()"></app-button>
+      <!--<button class="btn btn-info bt">Edit</button>&nbsp;-->
+      <!--<button class="btn btn-danger bt">Remove</button>-->
+    </div>
+
+  </div>
+
+</div>
+
+<div *ngIf="pop">
+  <app-popup (child)="pop=$event" [Id]="id" [component]="'configuration'" [name]="'delete'"></app-popup>
+
+</div><div *ngIf="pop1">
+  <app-popup (child)="pop1=$event" [Id]="id" [component]="'configuration'" [name]="'duplicate'" [data]="data"></app-popup>
+
+</div>
+<!--</div>-->

@@ -1,0 +1,31 @@
+<div class="card ">
+
+  <div id="container">
+    <div id="left">
+      <h2 style="font-family: 'Arial'; font-size:36px"><b>Iheb BOND</b></h2>
+      <p>Country : france</p>
+      <p>Phone : 54656565</p>
+      <p>Vote : 0</p>
+
+    </div>
+
+    <div id="right">
+      <p>iheb.bond@gmail.com</p>
+      <p style="font-size: 16px">IdExt-An id</p>
+      <div class="button3">
+<br>
+<br>
+     &nbsp;     <app-button [remove]="true" (click)="confirm()"></app-button>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div *ngIf="pop">
+  <app-popup (child)="pop=$event" [component]="'user'" [name]="'zeta'"></app-popup>
+
+</div>

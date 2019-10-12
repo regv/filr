@@ -1,0 +1,52 @@
+
+<form>
+  <div>
+    <p *ngIf="!ud" style="font-size: 4vw;font-family: 'Segoe UI'; margin:64px 50px 152px ">Add New Tag</p>
+    <p *ngIf="ud" style="font-size: 4vw;font-family: 'Segoe UI'; margin:64px 50px 152px ">Update Tag</p>
+    <div>
+      <div class="buttonPosition">
+    <span *ngIf="ud" >
+      <app-button [save]="true" (btnClick)="onFormUpdate()" [disabled]="validT.size>0"></app-button>&nbsp;
+    </span>
+        <span *ngIf="!ud"  >
+    <app-button [save]="true" (btnClick)="onFormSubmit()" [disabled]="validT.size>0" ></app-button>&nbsp;</span>
+        <span (click)="goBack()">
+        <app-button [cancel]="true" routerLinkActive="active"></app-button>
+      </span>
+      </div>
+    </div>
+    <p-tabView>
+
+      <p-tabPanel header="General">
+        <div class="">
+          <!--<app-input [txt]="'Title'" >-->
+          <!--<div class=".col-75">-->
+          <!--<input type="text" [ngModel]="tag?.title" (ngModelChange)="tag.title = $event" name="title"/>-->
+          <!--</div></app-input>-->
+          <app-inputb [txt]="'Title'"
+                      [(entity)]="tag"
+                      [required]="true"
+                      [field]="'title'" (child)="validEtat($event)" [txtDisplay]="'cant be no valid'" [UD]="ud"></app-inputb>
+          <!--<div *ngIf="!bTitle">-->
+            <!--Name cannot be Bob.-->
+          <!--</div>-->
+          <app-picker [(entity)]="tag"
+                      [field]="'bgColor'"
+                      [txt]="'Color'" (validator)="validEtat($event)" [UD]="ud"></app-picker>
+
+          <app-toggle-b [txt]="'Master tag'"
+                        [(entity)]="tag"
+                        [field]="'bMaster'" [marginLeft]="'0'" ></app-toggle-b>
+
+          <!--<app-textereab  [txt]="'Description'"-->
+                       <!--[(entity)]="tag"-->
+                       <!--[w25]="'176px'"-->
+                       <!--[field]="'description'" (Validator)="validEtat($event)"  [required]="true"></app-textereab>-->
+
+
+        </div>
+      </p-tabPanel>
+
+    </p-tabView>
+  </div>
+</form>

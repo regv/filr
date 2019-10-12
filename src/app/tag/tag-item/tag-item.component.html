@@ -1,0 +1,29 @@
+<div class="card ">
+
+  <div id="container">
+    <div id="left">
+      <h2 style="font-family: 'Arial'; font-size:36px"><b>{{data.title}} {{idc}}</b></h2>
+      <p>Color: <span  [ngStyle]="{'background-color':data.bgColor}" style=" color: rgba(15,130,232,0); font-size: 18px; border: 1px #3e4043 solid;user-select: none;">ott</span> {{data.bgColor}}</p>
+      <p>Master TAG:{{data.bMaster}}</p>
+    </div>
+
+    <div class="item2">
+
+      <div class="button3">
+        <span [routerLink]="['edit/', id]" > <app-button [edit]="true"  ></app-button> </span> &nbsp;
+        <app-button [remove]="true" (click)="confirm(idc)" > </app-button>
+
+        <!--<button class="btn btn-info bt">Edit</button>&nbsp;-->
+        <!--<button class="btn btn-danger bt">Remove</button>-->
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<div *ngIf="pop">
+  <app-popup (child)="pop=$event" (delete)="idc=$event" [Id]="id"[component]="'tag'" [name]="'delete'"></app-popup>
+
+</div>

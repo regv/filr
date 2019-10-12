@@ -1,0 +1,31 @@
+<div class="row" >
+  <!--[formGroup]="parentForm"-->
+  <div class="col-25" [class.col-251]="w25" [ngStyle]="{'width': w25 }">
+    <label [ngStyle]="{'margin-left': marginLeft }">{{txt}}</label>
+  </div>
+  <div class="col-75" [ngStyle]="{'margin-left': marginLeft , 'width': w75 }">
+    <!--<p-colorPicker [(ngModel)]="entity[entityField]"></p-colorPicker>-->
+    <input class="picker" [(colorPicker)]="entity[entityField]" [style.background]="entity[entityField]" (blur)= "checkClicked(entity[entityField])" [cpAlphaChannel]="'always'"
+           [cpOKButton]="true"
+           [cpSaveClickOutside]="false"
+           [cpOKButtonClass]= "'btn btn-primary btn-xs'"
+            >
+    <!--<input type="color" [(ngModel)]="entity[entityField]"-->
+           <!--(change) = "checkClicked(entity[entityField])" value="#0080ff"-->
+    <!--/>-->
+    <input class="field" type="text"  [(ngModel)]="entity[entityField]"
+           #picker='ngModel' [textMask]="{mask: mask}"
+           (keyup)="valid(entity[entityField])" [required]="required"   ngModel>
+    <!--<span>{{entity[entityField]}}</span>-->
+
+  </div>
+  <div *ngIf=" bForm === true">
+    {{entityField}} cannot be empty.<br>
+    {{entityField}} must have 7 characters.<br>
+  </div>
+  <div class="isa_error" *ngIf="picker.invalid">
+    not a valid URL or empty</div>
+</div>
+<!--[textMask]="{mask: mask}"-->
+<!--appSpecialIsAlphaNumeric-->
+

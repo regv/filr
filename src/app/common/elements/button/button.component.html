@@ -1,0 +1,16 @@
+<!--<p>-->
+<!--button works!-->
+<!--{{btnColor[1]}}-->
+<!--</p>-->
+<button [disabled]="disabled" disabled="disabled" (click)="click()"
+  [class.add]="add" [class.save]="save" [class.edit]="edit" [class.cancel]="cancel"[class.disable]="disabled"
+  [class.remove]="remove"[class.upload]="upload" [class.yes]="yes">
+  <span *ngIf="add "> Add</span>
+  <span *ngIf="save "> Save</span>
+  <span *ngIf="edit "> Edit</span>
+  <span *ngIf="remove "> Remove</span>
+  <span *ngIf="cancel "> Cancel</span>
+  <span *ngIf="upload "> Upload</span>
+  <span *ngIf="yes"> Yes</span>
+
+</button>

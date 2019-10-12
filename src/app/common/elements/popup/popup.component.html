@@ -1,0 +1,22 @@
+<div id="my-modal" class="modal" [hidden]="isHidden">
+  <div class="modal-content">
+
+    <div class="modal-body">
+
+      <p>Are you sure you want to remove</p>
+      <p> {{component}} {{name}}{{Id}} ?</p>
+      <div class="footer">
+        <span *ngIf="name=== 'delete'">
+      <app-button [yes]="true" (click)="deleteP(Id, component)"></app-button>
+      &nbsp;</span><span *ngIf="name=== 'duplicate'">
+      <app-button [yes]="true" (click)=" duplicate(data)"></app-button>
+      &nbsp;</span>
+      &nbsp;
+      <app-button [cancel]="true"  (click)="click()"></app-button>
+      </div>
+    </div>
+    <!--<div class="modal-footer">-->
+     <!---->
+    <!--</div>-->
+  </div>
+</div>

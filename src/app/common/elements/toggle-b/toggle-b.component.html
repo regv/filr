@@ -1,0 +1,22 @@
+<div class="row">
+<div class="col-25"  [ngStyle]="{'margin-left':marginLeft, 'margin-top':marginTop}">
+  <label class="textStyle" [ngStyle]="{'margin-left': marginLeft}">{{txt}}
+   </label>
+</div>
+<div class="col-75">
+<label class="switch-light switch-candy content" onclick="">
+  <input [checked]="test" type="checkbox" [ngModel]="entity[entityField]" (ngModelChange)="entity[entityField] = $event" (change) = "checkClicked(test)">
+
+  <span  *ngIf="!emoji">
+    <span>No</span>
+    <span>Yes</span>
+    <a></a>
+  </span>
+  <span *ngIf="emoji">
+    <span>Emoji</span>
+    <span>Stars</span>
+    <a></a>
+  </span>
+</label>
+</div>
+</div>

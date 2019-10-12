@@ -1,3 +1,52 @@
-p {
-  font-family: Lato;
+/*.main {*/
+  /*margin-left: 160px; !* Same as the width of the sidenav *!*/
+  /*font-size: 28px; !* Increased text to enable scrolling *!*/
+  /*padding: 0px 10px;*/
+/*}*/
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*.container {*/
+  /*width: 100%;*/
+  /*background: pink;*/
+  /*display: flex;*/
+  /*height: 100vh;*/
+/*}*/
+.container1 {
+  width: 100%;
+  /*background: pink;*/
+  display: flex;
+  height: 100vh;
+}
+
+.content {
+  width: 100%;
+  /*background: green;*/
+  height: inherit;
+  overflow: auto;
+  /*auto*/
+}
+
+.searchBar {
+  width: 100%;
+  height: auto;
+  /* background: magenta; */
+  /*margin-bottom: 50px;*/
+}
+
+.contentBody {
+  /*width: 100%;*/
+  /*height: auto;*/
+  /*min-height: 200px;*/
+  /*background: blue;*/
+  width: 100%;
+  /*height: calc(100vh - 110px);*/
+  height: calc(100vh - 1px);
+  /*background: blue;*/
+  overflow: auto;
+  overflow-x: hidden;
 }

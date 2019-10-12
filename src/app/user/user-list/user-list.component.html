@@ -1,0 +1,17 @@
+<!--<div class="container_list" >-->
+<div class="marg">
+  <app-search></app-search>
+</div>
+
+<div style="margin-bottom: 37.22px; margin-left: 50px" >
+  <p style="font-size: 4vw;font-family: 'Segoe UI'">Users(3)</p>
+  <!--<app-button class="po" [add]="true" routerLinkActive="active"  routerLink="add"></app-button>-->
+</div>
+
+  <section  *ngFor="let i of ls">
+
+    <app-user-item></app-user-item>
+    <br>
+    <br>
+  </section>
+<!--</div>-->

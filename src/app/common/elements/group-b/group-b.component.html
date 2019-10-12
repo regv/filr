@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-25"  [ngStyle]="{'margin-left': w25}">
+    <label [ngStyle]="{'margin-left': marginLeft}">{{txt}}</label>
+  </div>
+  <div class="col-75">
+    <div class="btn-group" *ngIf="f" >
+      <input type="checkbox" id="toggle-button-checkbox"
+             (change)="changed.emit($event.target.checked)">
+      <button  >No</button>
+      <button >Yes</button>
+    </div>
+
+  </div>
+</div>
+
+
