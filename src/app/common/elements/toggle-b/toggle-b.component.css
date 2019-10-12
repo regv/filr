@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #535457;
+  resize: vertical;
+  border-radius: 10px 10px 10px 10px;
+  height: 40px;
+  outline: none;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-size: 25px;
+  color: #707070;
+  font-family: "Segoe UI";
+
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  /*width: 9%;*/
+  width: 175px;
+  margin-top: 6px;
+}
+.col-251 {
+  float: left;
+  /*width:30%;*/
+  width: 165px;
+  margin-top: 6px;
+}
+.col-25 {
+  float: left;
+  width: 30%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 58%;
+  margin-top: 16px;
+  /*margin-left: 121.16px;*/
+}
+.col-751 {
+  float: left;
+  /*width: 89%;*/
+  width: 470px;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.ui-tabview {
+  margin-left: 50px !important;
+  padding: .25em;
+}
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1313px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.textStyle{
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-family: "Segoe UI";
+  font-size: 25px;
+  color: #707070;
+  width: 253px;
+}
+label {
+  width: 228px;
+  height: 43px;
+  font-size: 15px;
+
+}
+.switch-candy a {
+  border: none;
+   border-radius: 0;
+   box-shadow: none;
+  background: #0F82E8 none;
+}
+.switch-light.switch-candy > span {
+background-color: #F5F5F5;
+
+}
+
+.switch-light.switch-candy span span, .switch-light.switch-candy input:checked ~ span span:first-child, .switch-toggle.switch-candy label {
+  text-align: center;
+  font-family: Calibri;
+  letter-spacing: 0;
+  color: #707070;
+  text-transform: capitalize;
+  opacity: 1;
+  font-weight: unset;
+  text-shadow: none;
+  font-size:  26px;
+
+}
+
+.switch-light.switch-candy input ~ span span:first-child, .switch-light.switch-candy input:checked ~ span span:nth-child(2), .switch-candy input:checked + label{
+  color: #e6e6e6;
+}

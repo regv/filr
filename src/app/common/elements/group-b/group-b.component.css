@@ -1,0 +1,120 @@
+/***************switch button**************/
+.btn-group button {
+  background-color: #e6e6e6; /* Green background */
+  border: 1px solid #F5F5F5; /* Green border */
+  color: white; /* White text */
+  /*padding: 10px 24px; !* Some padding *!*/
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  width: 100px;
+  height: 32px;
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.active,.btn-group button:focus {
+  background-color: #0F82E8;
+}
+
+/***********************************************************/
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #535457;
+  resize: vertical;
+  border-radius: 10px 10px 10px 10px;
+  height: 40px;
+
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-family: "Segoe UI";
+  font-size: 25px;
+ /*margin-left: 30px;*/
+  color:#707070;
+}
+.yes{
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-family: "Segoe UI ", serif;
+  font-size: 25px;
+  margin-left: 30px;
+  color:#707070;
+}
+.no {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-family: "Segoe UI";
+  font-size: 25px;
+  color:#707070;
+}
+input[type=submit] {
+  background-color: #e6e6e6;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 30%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 58%;
+  margin-top: 16px;
+  /*margin-left: 121.16px;*/
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1313px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.m{
+  margin-left: 0;
+}
+input[type="checkbox"] {
+  display: none;
+}

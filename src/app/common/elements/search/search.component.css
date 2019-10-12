@@ -1,0 +1,36 @@
+/*-----------------------sidebar-search------------------------*/
+
+ /*.search-container {*/
+  /*position: fixed;*/
+  /*left:380px;*/
+  /*top:2%;*/
+/*z-index: 6;}*/
+
+ input[type=text] {
+   margin-top: 32px;
+   font-size: 17px;
+   width: calc(100% - 97.35px);
+   height: 58.67px;
+   border-radius: 10px 10px 10px 10px;
+   /*background: #ddd;*/
+   border:1px solid #535457;
+   margin-left: 49px;
+   outline: none;
+   text-indent: 17px;
+}
+
+/*.topnav .search-container button {*/
+  /*padding: 6px;*/
+  /*margin-top: 8px;*/
+  /*margin-right: 16px;*/
+  /*background: #ddd;*/
+  /*font-size: 17px;*/
+  /*border: none;*/
+  /*cursor: pointer;*/
+/*}*/
+
+.topnav .search-container button:hover {
+  background: #ccc;
+
+
+}

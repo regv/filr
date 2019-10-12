@@ -1,0 +1,405 @@
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  /*border-collapse: collapse;*/
+  width: 99%;
+  float: left;
+  height: 742px;
+  max-height: 742px;
+  min-height: 742px;
+  overflow-x: auto;
+  margin-right: 14px;
+}
+
+#customers td, #customers th {
+  /*border: 1px solid #ddd;*/
+  padding: 8px;
+  text-align: center;
+}
+#customers tr {
+
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  /*border: 1px solid #ddd*/
+}
+#customers tr :nth-child(3){
+
+  border: 1px solid #ddd
+}
+#customers tr :first-child{
+
+  zoom:0 ;
+}
+#customers tr :nth-child(2){
+
+  border: 1px solid #ddd
+}
+
+#customers tr:last-child {
+
+  border-bottom: 1px solid #ddd;
+  /*border-bottom: none;*/
+}
+/*#customers tr:nth-child(even){*/
+  /*background-color: #f2f2f2;}*/
+
+/*#customers tr:hover {background-color: #ddd;}*/
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #F5F5F5;
+  border: 0.25px solid #707070;
+  font-size: 25px;
+  color: #707070;
+  width: 508px;
+  height: 39px;
+}
+/********************cus1*********************/
+#customers1 {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  /*border-collapse: collapse;*/
+width: 99%;
+  float: right;
+  /*height: 742px;*/
+  max-height: 742px;
+  /*min-height: 742px;*/
+  overflow-x: auto;
+  margin-right: 14px;
+}
+#customers1 tr td .checkmark{pointer-events:none;}
+#customers1 td, #customers1 th {
+  /*border: 1px solid #ddd;*/
+  padding: 8px;
+  text-align: center;
+}
+#customers1 tr {
+
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  /*border: 1px solid #ddd*/
+}
+#customers1 tr :nth-child(3){
+
+  border: 1px solid #ddd
+}
+#customers1 tr :first-child{
+
+  zoom:0 ;
+}
+#customers1 tr :nth-child(2){
+
+  border: 1px solid #ddd
+}
+
+#customers1 tr:last-child {
+
+  border-bottom: 1px solid #ddd
+  /*border-bottom: none;*/
+}
+
+/*#customers tr:nth-child(even){*/
+/*background-color: #f2f2f2;}*/
+
+/*#customers tr:hover {background-color: #ddd;}*/
+/*#customers1 tr:hover {background-color: #ddd;}*/
+
+#customers1 th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #F5F5F5;
+  border: 0.25px solid #707070;
+  font-size: 25px;
+  color: #707070;
+  width: 508px;
+  height: 39px;
+}
+
+/*************checkbox**********************/
+.containert {
+  display: block;
+  position: relative;
+  padding-left: 108px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.containert input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 20px;
+  left: 40%;
+  height: 22.6px;
+  width: 22.6px;
+  background-color: #eee;
+  border: 1px solid #707070;;
+}
+
+/* On mouse-over, add a grey background color */
+.containert:hover input ~ .checkmark {
+  /*background-color: #ccc;*/
+}
+
+/* When the checkbox is checked, add a blue background */
+.containert input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+#customers td {
+
+  border-right: 1px;
+
+}#customers1 td {
+
+  border-right: 1px;
+
+}
+ td:last-child {
+  border-bottom: 1px;
+
+
+}
+/* Style the checkmark/indicator */
+/*.container .checkmark:after {*/
+  /*left: 9px;*/
+  /*top: 5px;*/
+  /*width: 5px;*/
+  /*height: 10px;*/
+  /*border: solid white;*/
+  /*border-width: 0 3px 3px 0;*/
+  /*-webkit-transform: rotate(45deg);*/
+  /*-ms-transform: rotate(45deg);*/
+  /*transform: rotate(45deg);*/
+/*}*/
+@media screen and (max-width: 1300px) {
+  .checkmark {
+
+    left: 35%;
+
+  }
+}
+
+@media screen and (max-width: 1022px) {
+  #customers1, #customers {
+
+width: 100%;
+  }
+}
+
+table,tr,td {
+  border-bottom: 0;
+
+}
+@media screen and (max-width: 1003px) {
+  .cus {
+
+    left: 35%;
+
+  }
+}
+
+/**********************tabs****/
+.project-tab {
+  padding-top: 10%;
+  margin-top: -8%;
+}
+.project-tab #tabs{
+  background: #007b5e;
+  color: #eee;
+}
+.project-tab #tabs h6.section-title{
+  color: #eee;
+}
+.project-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #0062cc;
+  background-color: transparent;
+  border-color: transparent transparent #f3f3f3;
+  border-bottom: 3px solid !important;
+  font-size: 25px;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  /*font-weight: bold;*/
+}
+.project-tab .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  color: #0062cc;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
+  font-size: 25px;
+  font-weight: 600;
+}
+.project-tab .nav-link:hover {
+  border: none;
+}
+.project-tab thead{
+  background: #f3f3f3;
+  color: #333;
+}
+.project-tab a{
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+/*******************tabs*******************/
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*body {*/
+/*font-family: sans-serif;*/
+/*background: #f6f9fa;*/
+/*}*/
+
+h1 {
+  color: #ccc;
+  text-align: center;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+  outline: none;
+}
+
+/*Fun begins*/
+.tab_container {
+  width: 99%;
+  margin: 0 auto;
+  padding-top: 29px;
+  position: relative;
+  min-width: 450px;
+}
+
+.input, .section {
+  clear: both;
+  padding-top: 10px;
+  display: none;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 18px;
+  display: block;
+  float: left;
+  width: 33%;
+  padding: 1.5em;
+  padding-left: 16px;
+
+  color: #757575;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  background: #f0f0f0;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3
+ {
+  display: block;
+  padding: 0;
+  background: #fff;
+  color: #999;
+  /*border-bottom: 2px solid #f0f0f0;*/
+}
+
+.tab_container .tab-content p,
+.tab_container .tab-content h3 {
+  -webkit-animation: fadeInScale 0.7s ease-in-out;
+  -moz-animation: fadeInScale 0.7s ease-in-out;
+  animation: fadeInScale 0.7s ease-in-out;
+}
+.tab_container .tab-content h3  {
+  text-align: center;
+}
+
+.tab_container [id^="tab"]:checked + .label {
+  background: #fff;
+  box-shadow: inset 0 3px #2196F3;
+}
+
+.tab_container [id^="tab"]:checked + .label .fa {
+  color: #0CE;
+}
+
+.label .fa {
+  font-size: 1.3em;
+  margin: 0 0.4em 0 0;
+}
+/*Media query*/
+@media only screen and (max-width: 930px) {
+  .label span {
+    font-size: 14px;
+  }
+  .label .fa {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .label span {
+    /*display: none;*/
+  }
+
+  .label .fa {
+    font-size: 16px;
+  }
+
+  .tab_container {
+    width: 98%;
+  }
+}
+
+/*Content Animation*/
+@keyframes fadeInScale {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
