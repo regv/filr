@@ -1,0 +1,39 @@
+.container_list{
+  background-color: red;
+width: calc(100% - 330px);
+height: 1000px;
+left: 330px;
+position: fixed;
+  /*width: 100%;*/
+  /*background: green;*/
+  /*height: inherit;*/
+  /*overflow: auto;*/
+}
+section{
+  /*background-color: #5dff3e;*/
+  left: 51px;
+  top: 17%;
+  position:relative;
+  width: calc(100% - 96.75999999999999px);
+
+  /*width: 100%;*/
+  /*height: auto;*/
+  /*min-height: 200px;*/
+  /*background: blue;*/
+}
+.po{
+  position: relative;
+  left:90% ;
+  top:-68px;
+}
+
+.marg{
+  margin-bottom: 86.33px;
+}
+
+@media screen and (max-width: 1300px) {
+  .po{
+    left: 80%;
+    top:0;
+  }
+}
